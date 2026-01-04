@@ -1,1 +1,5 @@
 2026-01-03 23:04:33,559 - AMAR - ERROR - Failed to initialize Voice Engine: name 'voices' is not defined
+2026-01-04 21:46:53,474 - AMAR - ERROR - Speech error (EdgeTTS): Command '['edge-tts', '--voice', 'en-IN-PrabhatNeural', '--text', '...', '--write-media', 'D:\\Amar2\\temp_speech.mp3']' returned non-zero exit status 1.
+2026-01-04 21:47:03,660 - AMAR - ERROR - Speech error (EdgeTTS): Command '['edge-tts', '--voice', 'en-IN-PrabhatNeural', '--text', '...', '--write-media', 'D:\\Amar2\\temp_speech.mp3']' returned non-zero exit status 1.
+2026-01-04 21:47:16,554 - AMAR - ERROR - Speech error (EdgeTTS): Command '['edge-tts', '--voice', 'en-IN-PrabhatNeural', '--text', '...', '--write-media', 'D:\\Amar2\\temp_speech.mp3']' returned non-zero exit status 1.
+2026-01-04 21:47:29,666 - AMAR - ERROR - Speech error (EdgeTTS): Command '['edge-tts', '--voice', 'en-IN-PrabhatNeural', '--text', '...', '--write-media', 'D:\\Amar2\\temp_speech.mp3']' returned non-zero exit status 1.

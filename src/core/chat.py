@@ -50,6 +50,5 @@ class ChatEngine:
              
         if "happy" in text or "khush" in text or "good" in text:
              return random.choice(self.responses["feeling_good"])
-        
         # Philosophical / Open ended defaults
         return random.choice(self.responses["default"])

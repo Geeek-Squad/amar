@@ -8,6 +8,25 @@ class VoiceInterface:
             self.recognizer = sr.Recognizer()
             self.engine = pyttsx3.init()
             
+            # Configure voice: Prefer "Zira" (Female/Clearer) or "David"
+            # In user's system, Index 1 is likely 'Microsoft Zira' or just US English
+            voices = self.engine.getProperty('voices')
+            found_voice = False
+            for voice in voices:
+                if "zira" in voice.name.lower():
+                    self.engine.setProperty('voice', voice.id)
+                    found_voice = True
+                    break
+            
+            if not found_voice and len(voices) > 1:
+                self.engine.setProperty('voice', voices[1].id) # Fallback to index 1
+
+            self.engine.setProperty('rate', 160) # Slightly slower clearly
+
+            # Set Default Sensitivity (Lower = More Sensitive)
+            self.recognizer.energy_threshold = 300 
+            self.recognizer.dynamic_energy_threshold = True
+
             # Find best microphone (Realtek / Microphone Array)
             self.mic_index = None # Default
             try:
@@ -97,11 +116,7 @@ class VoiceInterface:
                         return text
                     except sr.UnknownValueError:
                         print("(Could not understand audio)")
-                        # If we heard something but couldn't understand, the MIC IS WORKING, just unintelligible.
-                        # So we return space to stop switching, but empty string technically means silence to the app.
-                        # Let's return empty, but maybe we shouldn't switch?
-                        # For now, treat as failure to be safe? No, unintelligible means signal exists.
-                        return " " # Hack to indicate "Alive but didn't get it" to prevent switch?
+                        return " " # Return space to indicate signal but no words, avoiding switch
                     except sr.RequestError as e:
                         print(f"(Network/API Error: {e})")
                         return ""
