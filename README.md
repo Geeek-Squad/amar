@@ -14,14 +14,14 @@ The system is built on a modular architecture:
 
 ## Usage
 
-To start AMAR (Text Mode):
+To start AMAR (Voice Mode - Default):
 ```bash
 python main.py
 ```
 
-To start AMAR (Voice Mode):
+To start AMAR (Text Mode):
 ```bash
-python main.py --voice
+python main.py --text
 ```
 
 ### Example Interaction
@@ -54,7 +54,11 @@ python main.py --voice
    pip install SpeechRecognition pyttsx3 pyautogui pyaudio
    ```
 
-## Updates (Phase 3)
+## Updates (Phase 4)
+- **Personality Engine**: Can chat about feelings ("Kaise ho?", "Udaas hun").
+- **Smart Understanding**: Extracts commands intelligently.
+  - "Chrome pe mail kholo" -> Opens `Chrome`.
+  - "Google pe python search kro" -> Searches `python`.
 - **Hinglish Support**: Understands "kro", "bhejo", "dhoondo".
 - **Terminal Control**: Can run shell commands (with confirmation).
 - **Better Voice**: Tuned for clarity (Zira).

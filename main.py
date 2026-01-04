@@ -5,7 +5,8 @@ import src.tools.automation
 import src.tools.system_ops 
 
 def main():
-    use_voice = "--voice" in sys.argv
+    # Phase 5: Voice is default now. Use --text to disable.
+    use_voice = "--text" not in sys.argv
     app = CLI(use_voice=use_voice)
     app.start()
 

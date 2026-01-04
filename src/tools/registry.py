@@ -46,6 +46,10 @@ def create_file(path: str, content: str):
         f.write(content)
     return f"File created at {path}"
 
-@registry.register("chat_response", "Just a conversational placeholder")
-def chat_response():
+@registry.register("chat_response", "Conversational response")
+def chat_response(response_text: str = None):
+    # This tool doesn't do much, the CLI handles the printing usually.
+    # But returning the text allows CLI to see it as a result if it uses return value.
+    if response_text:
+        return response_text
     return "I am listening."
